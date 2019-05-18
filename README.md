@@ -45,7 +45,7 @@ While there is no nav bar, each part of the form should be at its own route. Cli
 
 ## THE REVIEW COMPONENT
 
-In addition to the multi-step form, the app needs to display the results of each step clearly and at all times. HINT: This will be your current redux values displayed on the DOM. 
+In addition to the multi-step form, the app needs to display the results of each step clearly and at all times. HINT: This will be your current redux values displayed on the DOM.
 
 The simplest way could be another component on the DOM which shows the results of the current survey and a Submit button.
 
@@ -82,4 +82,4 @@ Display all of the existing feedback at the route `/admin`. The most recently ad
 - Update this README.md to describe the project in your own words
 - Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
 - Add the ability to flag an existing feedback entry for further review on the /admin view
-- Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
+- Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps!

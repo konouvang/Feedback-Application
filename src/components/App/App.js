@@ -11,6 +11,13 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
+        Router
+          <div>
+            Route exact path="/" component=Products
+            <br/>
+            Route exact path="/checkout" component=Checkout
+          </div>
+        Router
       </div>
     );
   }

@@ -8,14 +8,14 @@ class Understanding extends Component {
     constructor(props){
         super(props)
         this.state = {
-            understandingToAdd: '',
+            understanding: '',
         }
     }S
 
     handleFieldChange = (event) => {
          this.setState({
             
-                understandingToAdd: event.target.value
+                understanding: event.target.value
         });
     }
 
@@ -23,7 +23,7 @@ class Understanding extends Component {
     submitUnderstanding = (event) => {
         this.props.dispatch({
             type: 'ADD_UNDERSTANDING',
-            payload: this.state.understandingToAdd,
+            payload: this.state.understanding,
         });
         // navigate to the Review page after checkout
         this.props.history.push('/support');

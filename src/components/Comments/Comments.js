@@ -9,14 +9,14 @@ class Comments extends Component {
         constructor(props){
             super(props)
             this.state = {
-                commentsToAdd: '',
+                comments: '',
             }
         }
     
         handleFieldChange = (event) => {
              this.setState({
                 
-                    commentsToAdd: event.target.value
+                    comments: event.target.value
             });
         }
     
@@ -24,7 +24,7 @@ class Comments extends Component {
         submitComment = (event) => {
             this.props.dispatch({
                 type: 'ADD_COMMENT',
-                payload: this.state.commentsToAdd,
+                payload: this.state.comments,
             });
             // navigate to the Review page after checkout
             this.props.history.push('/review');

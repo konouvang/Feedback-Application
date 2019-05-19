@@ -8,14 +8,14 @@ class Feeling extends Component {
     constructor(props){
         super(props)
         this.state = {
-            feelingsToAdd: '',
+            feeling: '',
         }
     }S
 
     handleFieldChange = (event) => {
          this.setState({
             
-                feelingsToAdd: event.target.value
+                feeling: event.target.value
         });
     }
 
@@ -23,7 +23,7 @@ class Feeling extends Component {
     submitFeeling = (event) => {
         this.props.dispatch({
             type: 'ADD_FEELING',
-            payload: this.state.feelingsToAdd,
+            payload: this.state.feeling,
         });
         // navigate to the Review page after checkout
         this.props.history.push('/understanding');

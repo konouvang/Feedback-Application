@@ -43,16 +43,16 @@ class Review extends Component {
                 <h2>Review Your Feedback</h2>
                 <div>
                    <ul>
-                        Feeling: {this.props.reduxState.feedbackReducer.feelingsToAdd}
+                        Feeling: {this.props.reduxState.feedbackReducer.feeling}
                    </ul>
                    <ul>
-                        Understanding: {this.props.reduxState.feedbackReducer.understandingToAdd}
+                        Understanding: {this.props.reduxState.feedbackReducer.understanding}
                    </ul>
                    <ul>
-                        Support: {this.props.reduxState.feedbackReducer.supportToAdd}
+                        Support: {this.props.reduxState.feedbackReducer.support}
                    </ul>
                    <ul>
-                        Comment: {this.props.reduxState.feedbackReducer.commentsToAdd}
+                        Comment: {this.props.reduxState.feedbackReducer.comments}
                    </ul>
                    <button onClick={this.addFeedBackToDatabase}>SUBMIT</button>
                 </div>

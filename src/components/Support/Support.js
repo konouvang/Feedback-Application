@@ -9,14 +9,14 @@ class Support extends Component {
     constructor(props){
         super(props)
         this.state = {
-            supportToAdd: '',
+            support: '',
         }
     }S
 
     handleFieldChange = (event) => {
          this.setState({
             
-                supportToAdd: event.target.value
+                support: event.target.value
         });
     }
 
@@ -24,7 +24,7 @@ class Support extends Component {
     submitSupport = (event) => {
         this.props.dispatch({
             type: 'ADD_SUPPORT',
-            payload: this.state.supportToAdd,
+            payload: this.state.support,
         });
         // navigate to the Review page after checkout
         this.props.history.push('/comments');

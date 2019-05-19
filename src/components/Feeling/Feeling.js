@@ -5,6 +5,32 @@ import { withRouter } from 'react-router-dom';
 
 class Feeling extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            feelingsToAdd: '',
+        }
+    }S
+
+    handleFieldChange = (event) => {
+         this.setState({
+            
+                feelingsToAdd: event.target.value
+        });
+    }
+
+
+    submitFeeling = (event) => {
+        this.props.dispatch({
+            type: 'ADD_FEELING',
+            payload: this.state.feelingsToAdd,
+        });
+        // navigate to the Review page after checkout
+        this.props.history.push('/understanding');
+    }
+
+    
+
     render() {
         return (
             <div>
@@ -12,7 +38,8 @@ class Feeling extends Component {
                 <p>
                 Feeling?
                 </p>
-            input onChange=this.handleFieldChange type="number" min="1" max="5"
+            <input onChange={this.handleFieldChange} type="number" min="1" max="5" />
+            <button onClick={this.submitFeeling}>NEXT</button>
             </div>
         )
     }

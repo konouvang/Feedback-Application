@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
 
-class Supports extends Component {
+class Support extends Component {
 
     render() {
         return (
@@ -19,4 +19,4 @@ class Supports extends Component {
     }
 }
 
-export default connect(mapReduxStateToProps)(Supports);
+export default connect(mapReduxStateToProps)(Support);

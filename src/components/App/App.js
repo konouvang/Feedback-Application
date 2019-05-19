@@ -21,17 +21,18 @@ class App extends Component {
 
 
   getFeedback() {
-    axios.get('/')
+    axios.get('/feedback')
     .then((response) => {
       this.setState({
         feedbackData : response.data
       });
-      console.log(this.state);
+      console.log(response.data);
     })
     .catch((err) => {
       console.log(err);
     })
   }
+
 
   render() {
     return (

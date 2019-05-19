@@ -6,7 +6,7 @@ const pool = require('../pool');
 router.get('/', (req, res) => {
     console.log(`In /feedback GET`);
 
-    let feedbackfeedbackQueryText = `SELECT * FROM "feedback";`;
+    let feedbackQueryText = `SELECT * FROM "feedback";`;
     pool.query(feedbackQueryText).then((result) => {
         // send back our query results as an array of objects
         res.send(result.rows); // result.rows will always be an Array

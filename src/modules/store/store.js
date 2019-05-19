@@ -10,6 +10,8 @@ const feedbackReducer = (state = [], action) => {
         return {...state, supportToAdd: action.payload};
     } else if (action.type === 'ADD_COMMENT') {
         return {...state, commentsToAdd: action.payload};
+    } else if (action.type === 'FINAL_ADD_ALL_FEEDBACK') {
+        return action.payload;
     }
     return state;
 };

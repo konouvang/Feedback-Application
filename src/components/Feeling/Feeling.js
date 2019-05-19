@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
-
-// Redux dependencies
 import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
+import { withRouter } from 'react-router-dom';
 
 class Feeling extends Component {
 
@@ -20,4 +18,4 @@ class Feeling extends Component {
     }
 }
 
-export default connect(mapReduxStateToProps)(Feeling);
+export default withRouter(connect(mapReduxStateToProps)(Feeling));

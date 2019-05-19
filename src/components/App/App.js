@@ -1,55 +1,55 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Feeling from '../Feeling/Feeling';
 
 
 
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      feedbackData: []
-    }
-  }
 
   componentDidMount() {
-    this.getFeedback();
+    // this.getFeedback();
+    // this.postFeedback();
   }
 
 
-  getFeedback() {
-    axios.get('/feedback')
-    .then((response) => {
-      this.setState({
-        feedbackData : response.data
-      });
-      console.log(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+  // getFeedback() {
+  //   axios.get('/feedback')
+  //   .then((response) => {
+  //     console.log('this is axios.get',response.data);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
+  // }
 
+  // postFeedback() {
+  //   axios.get('/feedback')
+  //   .then((response) => {
+  //     console.log('not doing anything yet but this is axios.post');
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
+  // }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
-        <br/>
-        outer
-          <div>
-          Route exact path="/" component=Feeling />
-            <br/>
-            Route exact path="/checkout" component=Checkout
-          </div>
-          Router>
-      </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Feedback Form</h1>
+         </header> 
+         <br/>
+         <Route exact path="/" component={Feeling} />
+
+        </div> 
+     </Router>
+      
     );
   }
 }

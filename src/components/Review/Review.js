@@ -17,7 +17,9 @@ class Review extends Component {
 
 
     addFeedBackToDatabase =(event) => {
+        console.log(this.props.reduxState.feedbackReducer);
         postFeedback(this.props.reduxState.feedbackReducer);
+        this.props.history.push('/thankyou');
         }
 
     // postNewFeedback(feedbackObject) {

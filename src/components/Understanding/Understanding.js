@@ -5,14 +5,41 @@ import { withRouter } from 'react-router-dom';
 
 class Understanding extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            understandingToAdd: '',
+        }
+    }S
+
+    handleFieldChange = (event) => {
+         this.setState({
+            
+                understandingToAdd: event.target.value
+        });
+    }
+
+
+    submitFeeling = (event) => {
+        this.props.dispatch({
+            type: 'ADD_UNDERSTANDING',
+            payload: this.state.understandingToAdd,
+        });
+        // navigate to the Review page after checkout
+        this.props.history.push('/understanding');
+    }
+
+
     render() {
         return (
             <div>
-                <h2>How are you feeling today?</h2>
+                <h2>How well are you understanding the content?</h2>
                 <p>
-                Feeling?
+                Understanding?
                 </p>
-            input onChange=this.handleFieldChange type="number" min="1" max="5"
+                <input onChange={this.handleFieldChange} type="number" min="1" max="5" />
+                <button onClick={this.submitFeeling}>NEXT</button>
+            
             </div>
         )
     }

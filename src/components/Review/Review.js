@@ -5,24 +5,37 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
 import { postFeedback, getFeedback } from '../../modules/services/axiosService';
+import storeInstance from '../../modules/store/store';
 
 class Review extends Component {
-
-    postNewFeedback(feedbackObject) {
-        postFeedback(feedbackObject)
-            .then((response) => {
-                getFeedback()
-                    .then((response) => {
-                        this.props.dispatch({
-                            type: 'FINAL_ADD_ALL_FEEDBACK',
-                            payload: response.data
-                        });
-
-                        // navigate to list
-                        this.props.history.push('/');
-                    })
-            });
+    constructor(props){
+        super(props)
+        this.state = {
+            feedbackObject: {},
+        }
     }
+
+
+    addFeedBackToDatabase =(event) => {
+        postFeedback(this.props.reduxState.feedbackReducer);
+        }
+
+    // postNewFeedback(feedbackObject) {
+    //     postFeedback(feedbackObject)
+    //         .then((response) => {
+    //             getFeedback()
+    //                 .then((response) => {
+    //                     this.props.dispatch({
+    //                         type: 'FINAL_ADD_ALL_FEEDBACK_TO_REVIEW',
+    //                         payload: response.data
+    //                     });
+    //                     console.log(response.data);
+
+    //                     // navigate to list
+    //                     this.props.history.push('/');
+    //                 })
+    //         });
+    // }
 
     render() {
         return (
@@ -41,7 +54,7 @@ class Review extends Component {
                    <ul>
                         Comment: {this.props.reduxState.feedbackReducer.commentsToAdd}
                    </ul>
-                   <button onClick={this.postNewFeedback}>SUBMIT</button>
+                   <button onClick={this.addFeedBackToDatabase}>SUBMIT</button>
                 </div>
             </div>
         )

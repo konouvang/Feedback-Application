@@ -10,7 +10,7 @@ import axios from 'axios';
 }
 
 const postFeedback = (feedbackObject) => {
-    return axios.post('/artist', feedbackObject);
+    return axios.post('/feedback', feedbackObject);
 }
 
   export {

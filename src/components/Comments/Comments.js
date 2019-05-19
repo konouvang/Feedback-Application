@@ -11,7 +11,7 @@ class Comments extends Component {
             this.state = {
                 commentsToAdd: '',
             }
-        }S
+        }
     
         handleFieldChange = (event) => {
              this.setState({

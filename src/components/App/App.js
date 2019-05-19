@@ -1,11 +1,38 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-//import { HashRouter as Router, Route, Link } from 'react-router-dom';
-//import Feeling from '../Feeling/Feeling';
+
+
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      feedbackData: []
+    }
+  }
+
+  componentDidMount() {
+    this.getFeedback();
+  }
+
+
+  getFeedback() {
+    axios.get('/')
+    .then((response) => {
+      this.setState({
+        feedbackData : response.data
+      });
+      console.log(this.state);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
   render() {
     return (
       <div className="App">

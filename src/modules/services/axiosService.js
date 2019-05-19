@@ -1,24 +1,17 @@
 import axios from 'axios';
 
-const getFeedback() {
-    axios.get('/feedback')
-    .then((response) => {
-      console.log('this is axios.get',response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
 
-const postFeedback() {
-    axios.get('/feedback')
-    .then((response) => {
-      console.log('not doing anything yet but this is axios.post');
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+  const getFeedback = () => {
+    // just like $.ajax()
+    return axios({
+        method: 'GET',
+        url: '/feedback'
+    });
+}
+
+const postFeedback = (feedbackObject) => {
+    return axios.post('/artist', feedbackObject);
+}
 
   export {
     getFeedback,

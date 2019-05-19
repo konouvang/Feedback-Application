@@ -20,13 +20,13 @@ class Understanding extends Component {
     }
 
 
-    submitFeeling = (event) => {
+    submitUnderstanding = (event) => {
         this.props.dispatch({
             type: 'ADD_UNDERSTANDING',
             payload: this.state.understandingToAdd,
         });
         // navigate to the Review page after checkout
-        this.props.history.push('/understanding');
+        this.props.history.push('/support');
     }
 
 
@@ -38,7 +38,7 @@ class Understanding extends Component {
                 Understanding?
                 </p>
                 <input onChange={this.handleFieldChange} type="number" min="1" max="5" />
-                <button onClick={this.submitFeeling}>NEXT</button>
+                <button onClick={this.submitUnderstanding}>NEXT</button>
             
             </div>
         )

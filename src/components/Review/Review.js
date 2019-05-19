@@ -39,7 +39,7 @@ class Review extends Component {
                         Support: {this.props.reduxState.feedbackReducer.supportToAdd}
                    </ul>
                    <ul>
-                        Comment: {this.props.reduxState.feedbackReducer.feelingToAdd}
+                        Comment: {this.props.reduxState.feedbackReducer.commentsToAdd}
                    </ul>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 # Feedback Application
 
+_duration: 2 days _
+
 The Feedback Application is designed to collect the users metrics in daily learning.
 
 ## See the application working here!
